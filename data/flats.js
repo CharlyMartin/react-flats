@@ -1,7 +1,7 @@
 const flats = [
   {
     name: "Charm at the Steps of the Sacre Coeur/Montmartre",
-    imageUrl: "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat1.jpg",
+    id: "flat1",
     price: 164,
     priceCurrency: "EUR",
     lat: 48.884211,
@@ -9,7 +9,7 @@ const flats = [
   },
   {
     name: "Trendy Apt in Buttes Montmartre",
-    imageUrl: "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat2.jpg",
+    id: "flat2",
     price: 200,
     priceCurrency: "EUR",
     lat: 48.885707,
@@ -17,7 +17,7 @@ const flats = [
   },
   {
     name: "Super 60m2 in trendy neighborhood!",
-    imageUrl: "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat3.jpg",
+    id: "flat3",
     price: 150,
     priceCurrency: "EUR",
     lat: 48.885312,
@@ -25,7 +25,7 @@ const flats = [
   },
   {
     name: "Splendide terrasse vue imprenable",
-    imageUrl: "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat4.jpg",
+    id: "flat4",
     price: 115,
     priceCurrency: "EUR",
     lat: 48.88184,
@@ -33,7 +33,7 @@ const flats = [
   },
   {
     name: "Superbe vue à 2 min du Sacré Coeur",
-    imageUrl: "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat5.jpg",
+    id: "flat5",
     price: 135,
     priceCurrency: "EUR",
     lat: 48.888839,
@@ -41,7 +41,7 @@ const flats = [
   },
   {
     name: "Bohemian and Chic in Paris",
-    imageUrl: "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat6.jpg",
+    id: "flat6",
     price: 90,
     priceCurrency: "EUR",
     lat: 48.827855,
