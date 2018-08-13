@@ -5,6 +5,7 @@ import FlatList from './flat_list.jsx'
 import flats from '../../data/flats.js'
 import Map from './map.jsx'
 
+
 class App extends Component {
 
   render() {

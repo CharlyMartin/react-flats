@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Card from './card.jsx'
 
+
 class FlatList extends Component {
   constructor(props) {
     super(props)
