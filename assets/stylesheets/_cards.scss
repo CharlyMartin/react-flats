@@ -6,7 +6,8 @@
   color: white;
   position: relative;
   &.active {
-    border: 10px solid red;
+    border: 3px solid salmon;
+    border-radius: 3px;
   }
 }
 
@@ -51,8 +52,7 @@
   z-index: 2;
   background: black;
   opacity: 0;
-}
-
-.card-link:hover {
-  opacity: 0.1;
+  &:hover {
+    opacity: 0.1;
+  }
 }

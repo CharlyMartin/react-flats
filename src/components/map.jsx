@@ -4,16 +4,22 @@ import GoogleMap from 'google-map-react';
 import Marker from './marker.jsx'
 
 class Map extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.state = {
+  //     coords: {lat: 48.884211, lng: 2.34689}
+  //   }
+  // }
 
   render() {
-    const coords = {lat: 48.884211, lng: 2.34689};
+    const c = this.props.coords;
 
-    return(<GoogleMap defaultCenter={coords}
-              defaultZoom={14}>
-
+    return(<GoogleMap defaultCenter={{lat: 48.884211, lng: 2.34689}} defaultZoom={12}>
             {/* lat and lng need to be passed to Marker Component */}
-            <Marker lat={coords.lat} lng={coords.lng} text={'Kreyser Avrora'} />
-          </GoogleMap>)
+            <Marker lat={c.lat} lng={c.lng} />
+          </GoogleMap>
+        )
   }
 }
 

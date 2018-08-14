@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Card from './card.jsx'
+import Flat from './flat.jsx'
 
 
 class FlatList extends Component {
@@ -24,7 +24,17 @@ class FlatList extends Component {
     return (
       <div className="flat-list">
         {this.props.flats.map( f => {
-          return <Card id={f.id} key={f.id} description={f.name} price={f.price} currency={f.priceCurrency}/>
+          return <Flat  id={f.id}
+                        key={f.id}
+                        active={"flat1"}
+                        description={f.name}
+                        price={f.price}
+                        lat={f.lat}
+                        lng={f.lng}
+                        currency={f.priceCurrency}
+                        clickFunction={this.props.clickFunction}
+                      />
+
         })}
       </div>);
   }

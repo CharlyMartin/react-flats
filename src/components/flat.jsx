@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 
 
-class Card extends Component {
+class Flat extends Component {
+  constructor(props) {
+    super(props);
+    console.log("construc")
+    this.active = this.props.id;
+  }
+
+  initActive = () => {
+    const style = (this.active === "flat1" ? "active" : "");
+    this.active = "";
+    return style;
+  }
 
   render() {
     const imageUrl = `https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/${this.props.id}.jpg`
@@ -9,7 +20,7 @@ class Card extends Component {
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${imageUrl})`
     }
 
-    return (<div className="card" style={styles}>
+    return (<div className={"card " + this.initActive()} style={styles} onClick={this.props.clickFunction} data-lat={this.props.lat} data-lng={this.props.lng}>
               <div className="card-category">{this.props.price + " " + this.props.currency}</div>
               <div className="card-description">
                 <h2>{this.props.description}</h2>
@@ -20,4 +31,4 @@ class Card extends Component {
   };
 }
 
-export default Card;
+export default Flat;
