@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-import Flat from './flat.jsx'
+import Flat from './flat';
 
 
 class FlatList extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    // this.state = {
-    //   flats: []
-    // }
-  }
+  //   this.state = {
+  //     flats: []
+  //   }
+  // }
 
   // componentWillMount() {
   //   console.log(this.props.flats)
@@ -20,21 +20,19 @@ class FlatList extends Component {
   // }
 
   render() {
-
     return (
       <div className="flat-list">
-        {this.props.flats.map( f => {
-          return <Flat  id={f.id}
-                        key={f.id}
-                        active={"flat1"}
-                        description={f.name}
-                        price={f.price}
-                        lat={f.lat}
-                        lng={f.lng}
-                        currency={f.priceCurrency}
-                        clickFunction={this.props.clickFunction}
-                      />
-
+        {this.props.flats.map((f) => {
+          return <Flat
+            id={f.id}
+            key={f.id}
+            description={f.name}
+            price={f.price}
+            lat={f.lat}
+            lng={f.lng}
+            currency={f.priceCurrency}
+            clickFunction={this.props.clickFunction}
+          />
         })}
       </div>);
   }

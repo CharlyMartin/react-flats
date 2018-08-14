@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import Flat from './flat.jsx'
-import FlatList from './flat_list.jsx'
-import flats from '../../data/flats.js'
-import Map from './map.jsx'
+import FlatList from './flat_list';
+import flats from '../../data/flats';
+import Map from './map';
 
 
 class App extends Component {
@@ -12,13 +11,13 @@ class App extends Component {
 
     this.state = {
       coords: {}
-    }
+    };
 
     this.previous = "";
   }
 
   updateCoords = (obj) => {
-    this.setState({coords: {lat: Number(obj.lat),lng: Number(obj.lng)}});
+    this.setState({ coords: { lat: Number(obj.lat), lng: Number(obj.lng) } });
   }
 
   updateActive = (el) => {
@@ -44,14 +43,13 @@ class App extends Component {
   render() {
     return (
       <div className="main-container">
-        <FlatList flats={flats} clickFunction={this.handleClick}/>
+        <FlatList flats={flats} clickFunction={this.handleClick} />
         <div className="map-container">
-          <Map coords={this.state.coords}/>
+          <Map coords={this.state.coords} />
         </div>
       </div>
-    )
-  };
-
+    );
+  }
 }
 
 export default App;
