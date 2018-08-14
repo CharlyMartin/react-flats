@@ -1,26 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GoogleMap from 'google-map-react';
+import Marker from './marker';
 
-import Marker from './marker.jsx'
-
-class Map extends Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     coords: {lat: 48.884211, lng: 2.34689}
-  //   }
-  // }
-
-  render() {
-    const c = this.props.coords;
-
-    return(<GoogleMap defaultCenter={{lat: 48.884211, lng: 2.34689}} defaultZoom={12}>
-            {/* lat and lng need to be passed to Marker Component */}
-            <Marker lat={c.lat} lng={c.lng} />
-          </GoogleMap>
-        )
-  }
-}
+const Map = (props) => {
+  return (
+    <GoogleMap defaultCenter={props.coords} defaultZoom={12}>
+      {/* lat and lng need to be passed to Marker Component */}
+      <Marker lat={props.coords.lat} lng={props.coords.lng} />
+    </GoogleMap>
+  );
+};
 
 export default Map;

@@ -10,42 +10,51 @@ class App extends Component {
     super(props);
 
     this.state = {
-      coords: {}
+      flats,
+      current: flats[0],
     };
-
-    this.previous = "";
   }
 
-  updateCoords = (obj) => {
-    this.setState({ coords: { lat: Number(obj.lat), lng: Number(obj.lng) } });
+  center = () => {
+    return {
+      lat: this.state.current.lat,
+      lng: this.state.current.lng
+    };
   }
 
-  updateActive = (el) => {
-    // console.log(this.previous);
-    if (this.previous) {
-      this.previous.classList.remove("active");
-    }
-    el.classList.add("active");
-    this.previous = el;
-    // previous.classList.remove("active");
-    // el.classList.add("active");
+  updateSelected = (index) => {
+    this.setState({ current: flats[index] });
   }
 
-  handleClick = (event) => {
-    // console.log(event.currentTarget);
-    // The element on which onClick is attached (=> one on each flat card)
-    // this.getCoords(event.currentTarget.dataset);
-    event.preventDefault();
-    this.updateCoords(event.currentTarget.dataset);
-    this.updateActive(event.currentTarget);
-  }
+  // updateActive = (el) => {
+  //   if (this.state.previous) {
+  //     this.state.previous.classList.remove("active");
+  //   }
+
+  //   el.classList.add("active");
+  //   this.state.previous = el;
+  // }
+
+  // updateSelectedFlat = (event) => {
+  //   console.log(event.currentTarget);
+  //   The element on which onClick is attached (=> one on each flat card)
+  //   this.getCoords(event.currentTarget.dataset);
+  //   event.preventDefault();
+  //   this.updateCoords(event.currentTarget.dataset);
+  //   this.updateActive(event.currentTarget);
+  // }
 
   render() {
     return (
       <div className="main-container">
-        <FlatList flats={flats} clickFunction={this.handleClick} />
+        <FlatList
+          flats={this.state.flats}
+          selected={this.state.current}
+          updateFunction={this.updateSelected}
+        />
+
         <div className="map-container">
-          <Map coords={this.state.coords} />
+          <Map coords={this.center()} />
         </div>
       </div>
     );

@@ -2,33 +2,34 @@ import React, { Component } from 'react';
 
 
 class Flat extends Component {
-  constructor(props) {
-    super(props);
-
-    this.active = this.props.id;
+  classes = () => {
+    return this.props.selected ? "card active" : "card";
   }
 
-  initActive = () => {
-    const newClass = (this.active === "flat1" ? "active" : "");
-    this.active = "";
-    return newClass;
+  handleClick = (event) => {
+    /* The click happens on the Map level but the function is handled at the App level,
+    where the the unpdate function has access to the flats object with coords.
+    */
+    event.preventDefault();
+    this.props.updateFunction(this.props.index);
   }
 
   render() {
-    const imageUrl = `https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/${this.props.id}.jpg`
+    const imageUrl = `https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/${this.props.flat.id}.jpg`;
     const styles = {
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${imageUrl})`
-    }
+    };
 
-    return (<div className={"card " + this.initActive()} style={styles} onClick={this.props.clickFunction} data-lat={this.props.lat} data-lng={this.props.lng}>
-              <div className="card-category">{this.props.price + " " + this.props.currency}</div>
-              <div className="card-description">
-                <h2>{this.props.description}</h2>
-              </div>
-              <a className="card-link" href="#"></a>
-            </div>
-            );
-  };
+    return (
+      <div className={this.classes()} style={styles} role="link" onClick={this.handleClick}>
+        <div className="card-category">{`${this.props.flat.price} ${this.props.flat.priceCurrency}`}</div>
+        <div className="card-description">
+          <h2>{this.props.flat.name}</h2>
+        </div>
+        <span className="card-link" />
+      </div>
+    );
+  }
 }
 
 export default Flat;
