@@ -11,8 +11,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      coords: {},
-      selected: "flat1"
+      coords: {}
     }
 
     this.previous = "";

@@ -4,14 +4,14 @@ import React, { Component } from 'react';
 class Flat extends Component {
   constructor(props) {
     super(props);
-    console.log("construc")
+
     this.active = this.props.id;
   }
 
   initActive = () => {
-    const style = (this.active === "flat1" ? "active" : "");
+    const newClass = (this.active === "flat1" ? "active" : "");
     this.active = "";
-    return style;
+    return newClass;
   }
 
   render() {
